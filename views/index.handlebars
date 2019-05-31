@@ -1,9 +1,14 @@
+
+	
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="assets/images/cartoon_burger.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+    Eat-that-Burger
+  </a>
+</nav>
+
 <div class="container">
-	<div class="row">
-		<div class="col-md-12 text-center" id="top-bar">
-			<img src="/assets/images/cartoon_burger.jpg" alt="burger" />
-			<h1> Eat-Da-Burger! </h1>
-		</div>
+  <div class="jumbotron">
 		<div class="col-md-6 text-center" class="task">
 			<div class="row">
 			  {{#each burger_data}}
@@ -11,7 +16,6 @@
 				<div class="col-md-9 text-center">
 					<pre>{{this.id}}. {{this.burger_name}}
 					</pre>
-				  		<!-- {{this.Date}} -->
 				</div>
 				<div class="col-md-3 text-center">
 					<form class="devour-form button-size">

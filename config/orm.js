@@ -9,8 +9,18 @@ function printQuestionMarks(num) {
   return arr.toString();
 }
 
+function objToSql(ob) {
+	var arr = [];
+
+	for (var key in ob) {
+		arr.push(key + "=" + ob[key]);
+	}
+
+	return arr.toString();
+}
+
 var orm = {
-  selectALL: function(tableInput, cb) {
+  selectAll: function(tableInput, cb) {
     var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
       if (err) {
@@ -48,7 +58,9 @@ var orm = {
 		queryString += " SET ";
 		queryString += objToSql(objColVals);
 		queryString += " WHERE ";
-		queryString += condition;
+    queryString += condition;
+    
+    console.log(queryString);
 
 		
 		connection.query(queryString, function(err, result) {
