@@ -16,7 +16,7 @@
               <div class="form-group">
                   <label for="newburger">New Burger:</label>
                   <input type="text" id="newburger" name="burger">
-                  <button type="submit" class="btn btn-success" id="addburger"></button>
+                  <button type="submit" class="btn btn-success">Add</button>
               </div>
           </form>
       
@@ -35,7 +35,7 @@
             {{#each burger_data}}
                 {{#unless this.devoured}}
                     <li class="list-group-item"><strong> {{this.id}} - {{this.burger_name}} </strong>
-                    <button type="button" class="devour-burger btn btn-warning" id ="eatbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}"><i class="fas fa-utensils"></i></button></li>
+                    <button type="button" class="devour-burger btn btn-warning" id ="eatbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}">Devour</button></li>
                     
                 {{/unless}}
             {{/each}}
