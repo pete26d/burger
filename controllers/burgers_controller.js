@@ -14,6 +14,13 @@ router.get("/burgers", function(req, res) {
   });
 });
 
+router.post("/api/burgers", function (req, res) {
+  burger.insertOne(req.body.burger_name, function(result) {
+      // Send back the ID of the new burger
+      res.json({ id: result.insertId });
+  });
+});
+
 router.put("/burgers/:id", function(req, res) {
   burger.updateOne(req.params.id, function(result) {
     // wrapper for orm.js that using MySQL update callback will return a log to console,
